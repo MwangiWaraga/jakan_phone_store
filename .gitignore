@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# dbt generated artifacts
+target/
+logs/
+dbt_packages/
+dbt_modules/   # legacy
+
+# VS Code
+.vscode/
+
+# Credentials / secrets (defensive, though JSON is outside repo)
+*.json
+*.key
+*.pem
+
+# OS junk
+.DS_Store
+Thumbs.db

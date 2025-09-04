@@ -1,0 +1,13 @@
+jakan_phone_store:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
+      project: jakan-group     # ← replace
+      dataset: dbt_jackson             # ← replace (or keep)
+      threads: 4
+      location: US                     # ← replace with your region (e.g. US/EU)
+      priority: interactive
+      timeout_seconds: 300
