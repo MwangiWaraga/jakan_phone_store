@@ -17,6 +17,10 @@ dbt_modules/   # legacy
 *.key
 *.pem
 
+# dbt profiles (contains credentials)
+profiles/
+
 # OS junk
 .DS_Store
 Thumbs.db
+set-creds.ps1
