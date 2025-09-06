@@ -16,4 +16,4 @@ SELECT
 FROM {{ref('stg_oraimo_products')}} p
 LEFT JOIN recent r 
     ON p.product_model = r.product_model
-    AND p.product_model = r.product_model
+    AND p. web_scrap_ts = r.max_ts

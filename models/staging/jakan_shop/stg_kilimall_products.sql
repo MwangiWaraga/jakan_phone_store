@@ -1,3 +1,7 @@
+{{ config(
+    materialized = 'ephemeral' if target.name == 'prod' else 'view'
+) }}
+
 SELECT
   updated_at,
   store_name,

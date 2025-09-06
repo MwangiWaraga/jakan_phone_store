@@ -1,3 +1,7 @@
+{{ config(
+    materialized = 'ephemeral' if target.name == 'prod' else 'view'
+) }}
+
 SELECT
   listing_id,
   sku_id,

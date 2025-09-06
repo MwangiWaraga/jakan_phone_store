@@ -1,3 +1,7 @@
+{{ config(
+    materialized = 'ephemeral' if target.name == 'prod' else 'view'
+) }}
+
  select 
    timestamp(format_timestamp('%Y-%m-%d %H:%M:%S', timestamp(ts))) as web_scrap_ts,
    product_url,
@@ -14,7 +18,7 @@
    case 
      when stock_status = 'InStock' then 1
      else 0
-   end as in_status,
+   end as in_stock,
    slug
   from {{ source('jakan_phone_store', 'oraimo_products_gsheets') }}
   where 
