@@ -6,6 +6,7 @@ SELECT
         WHEN p.listing_id IS NOT NULL THEN p.product_url
         ELSE CONCAT('https://www.kilimall.co.ke/listing/', e.listing_id)
     END AS product_url,
+    e.brand,
     e.product_title,
     e.market_price,
     e.selling_price,
