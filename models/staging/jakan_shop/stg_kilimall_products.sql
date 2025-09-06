@@ -4,7 +4,7 @@
 
 SELECT
   updated_at,
-  store_name,
+  LOWER(TRIM(store_name)) AS store_name,
   product_title,
   product_url,
   listing_id,
