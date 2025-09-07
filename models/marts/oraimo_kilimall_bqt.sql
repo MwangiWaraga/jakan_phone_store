@@ -87,9 +87,7 @@ measures as (
       select distinct t from unnest(split(c.n1_nb, ' ')) as t
       where length(t) >= 3
         and t not in (
-          'oraimo','as','picture','with','and','for','black','white','case',
-          'plus','pro','max','mini','byte','lit','inch','wireless',
-          'earbuds','earphones','charger','charging','power','bank','mah','w','amp'
+          'oraimo','as','picture','with','and','for','black','white','case'
         )
     ) as toks_oraimo,
 
@@ -97,9 +95,7 @@ measures as (
       select distinct t from unnest(split(substr(c.n2_nb, 1, length(c.n1_nb)), ' ')) as t
       where length(t) >= 3
         and t not in (
-          'oraimo','as','picture','with','and','for','black','white','case',
-          'plus','pro','max','mini','byte','lit','inch','wireless',
-          'earbuds','earphones','charger','charging','power','bank','mah','w','amp'
+          'oraimo','as','picture','with','and','for','black','white','case'
         )
     ) as toks_kilimall_prefix
   from cand c
