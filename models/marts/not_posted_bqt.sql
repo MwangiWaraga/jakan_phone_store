@@ -9,7 +9,8 @@ select
         oraimo_product_url,
         oraimo_mrkt_price,
         oraimo_current_price,
-        oraimo_latest_scrap_ts
+        oraimo_latest_scrap_ts,
+        oraimo_category,
     from {{ ref('oraimo_kilimall_bqt') }}
     cross join latest_scrap
     where 1 = 1

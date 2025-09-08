@@ -18,6 +18,7 @@ oraimo_norm as (
   select
     product_url         as oraimo_product_url,
     product_title       as oraimo_product_title,
+    category            as oraimo_category,
     short_description   as oraimo_description,
     market_price        as oraimo_mrkt_price,
     current_price       as oraimo_current_price,
@@ -167,6 +168,7 @@ ranked as (
 select
   o.oraimo_product_url,
   o.oraimo_product_title,
+  o.oraimo_category,
   o.oraimo_description,
   o.oraimo_mrkt_price,
   o.oraimo_current_price,
