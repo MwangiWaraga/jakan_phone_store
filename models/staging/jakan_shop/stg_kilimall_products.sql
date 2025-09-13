@@ -11,7 +11,9 @@ WITH recent as (
 SELECT
   updated_at,
   LOWER(TRIM(store_name)) AS store_name,
-  product_title,
+--   product_title,
+  INITCAP(TRIM(SPLIT(product_title, ' ')[SAFE_OFFSET(0)])) AS brand,
+  INITCAP(TRIM(SUBSTR(product_title, LENGTH(SPLIT(product_title, ' ')[SAFE_OFFSET(0)]) + 2))) AS product_title,
   product_url,
   listing_id,
   SAFE_CAST(regexp_replace(regexp_replace(price, 'KSh', ''), ',', '') AS numeric) AS price
