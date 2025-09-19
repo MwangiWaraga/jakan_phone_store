@@ -2,6 +2,7 @@ with raw as (
     select 
       listing_id,
       sku_id,
+      concat('https://www.kilimall.co.ke/listing/', listing_id) as product_url,
       initcap(trim(split(title, ' ')[SAFE_OFFSET(0)])) as brand,
       initcap(trim(substr(title, length(split(title, ' ')[safe_offset(0)]) + 2))) as product_title,
       market_reference_price as market_price,

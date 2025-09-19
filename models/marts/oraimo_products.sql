@@ -13,7 +13,7 @@ group by 1
     select
       web_scrap_ts,
       ean as product_id,
-      product_title,
+      initcap(product_title) as product_title,
       short_description,
       product_model,
       brand,
