@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: oraimo_products
+    description: "A table containing product information for Oraimo products."
+    columns:
+      - name: product_id
+        description: "The unique identifier for each product."
+        data_tests:
+          - unique
+          - not_null
+      # - name: product_title
+      #   description: "The title of the product."
+      #   data_tests:
+      #     - not_null
+      # - name: category
+      #   description: "The category to which the product belongs."
+      # - name: price
+      #   description: "The price of the product."
+      #   data_tests:
+      #     - not_null
+      #     - accepted_values:
+      #         values: [0, 10000]  # Assuming price is in a reasonable range
+      # - name: stock_quantity
+      #   description: "The quantity of the product available in stock."
+      #   data_tests:
+      #     - not_null
+      #     - accepted_values:
+      #         values: [0, 1000]  # Assuming stock quantity is in a reasonable range
+      # - name: created_at
+      #   description: "The timestamp when the product was added to the database."
+      #   data_tests:
+      #     - not_null
+      # - name: updated_at
+      #   description: "The timestamp when the product information was last updated."
+      #   data_tests:
+      #     - not_null

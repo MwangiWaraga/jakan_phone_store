@@ -19,6 +19,6 @@ packages-install-path: "dbt_packages"
 models:
   jakan_phone_store:
     staging:
-      +materialized: view
+      +materialized: table
     marts:
       +materialized: table

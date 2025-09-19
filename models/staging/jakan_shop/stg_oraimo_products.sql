@@ -1,10 +1,12 @@
 {{ config(
-    materialized = 'ephemeral' if target.name == 'prod' else 'view'
+    materialized = 'ephemeral' if target.name == 'prod' else 'table'
 ) }}
 
+
  select 
-   timestamp(format_timestamp('%Y-%m-%d %H:%M:%S', timestamp(ts))) as web_scrap_ts,
+   ts as web_scrap_ts,
    product_url,
+   'Oraimo' as brand,
    category,
    initcap(product_title) as product_title,
    short_description,
