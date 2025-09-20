@@ -1,7 +1,8 @@
 with oraimo as (
   select 
     category,
-    lower(left(product_title, 41)) as oraimo_shortned_product_title,
+    product_id,
+    lower(left(product_title, 18)) as oraimo_shortned_product_title,
     product_title as oraimo_title,
     product_url as oraimo_url,
     current_price,
@@ -12,7 +13,7 @@ with oraimo as (
 
 kilimall as (
   select
-    lower(left(product_title, 41)) as kil_shortened_title,
+    lower(left(product_title, 18)) as kil_shortened_title,
     listing_id,
     product_title as kil_product_title,
     product_url as kil_url
