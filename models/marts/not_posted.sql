@@ -8,7 +8,7 @@ with oraimo as (
     current_price,
     in_stock
   from {{ ref('oraimo_products') }}
-  -- where in_stock = 1
+  where in_stock = 1
 ),
 
 kilimall as (
@@ -23,13 +23,18 @@ kilimall as (
     -- and is_active = 1
 ),
 
-final as(
+final as (
     select
       o.product_id,
       o.oraimo_title,
       o.category,
       o.oraimo_url,
       o.current_price,
+    --   k.listing_id,
+      case
+        when k.listing_id is null then 'Never Posted'
+        else 'Posted but Inactive'
+      end as post_history
     from oraimo o
     left join kilimall k
       on o.oraimo_shortned_product_title = k.kil_shortened_title
