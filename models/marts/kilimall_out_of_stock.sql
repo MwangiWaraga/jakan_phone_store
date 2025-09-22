@@ -22,7 +22,7 @@ kilimall as (
     product_title as kil_product_title,
     product_url as kil_url
   from {{ ref('kilimall_products') }}
-  where brand = 'oraimo'
+  where brand = 'Oraimo'
     and is_active = 1
   qualify row_number() over (
     partition by lower(left(regexp_replace(product_title, r'\s+', ' '), 18)) 
